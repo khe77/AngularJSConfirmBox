@@ -7,7 +7,7 @@
  * # UserListCtrl
  * Controller of the angularJsexamApp
  */
-angular.module('angularJsexamApp')
+angular.module('angularJsconfirmBoxApp')
   .controller('UserListCtrl', [
     "Data", "$scope", "$state", 
     function (Data, $scope, $state) {

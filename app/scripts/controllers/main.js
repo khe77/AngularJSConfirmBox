@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the angularJsexamApp
  */
-angular.module('angularJsexamApp')
+angular.module('angularJsconfirmBoxApp')
   .factory('Data',['$http','$q', 
     function($http, $q) {
       return {

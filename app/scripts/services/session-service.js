@@ -7,7 +7,7 @@
  * # sessionService
  * Service in the angularJsexamApp.
  */
-angular.module('angularJsexamApp')
+angular.module('angularJsconfirmBoxApp')
   .service('sessionService', 
   	[ 'Data','sessionInfo',  function (Data, sessionInfo) {
     // AngularJS will instantiate a singleton by calling "new" on this function

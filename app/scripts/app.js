@@ -32,24 +32,9 @@ angular
         templateUrl:'views/login.html',
         controller:'LoginCtrl'
       })
-      .state('signup',{
-        url:'/signup',
-        templateUrl:'views/signup.html',
-        controller:'SignupCtrl'
-      })
-      .state('user-list',{
+      .state('confirm-list',{
         url:'/user/list',
         templateUrl:'views/user-list.html',
         controller:'UserListCtrl'
-      })
-      .state('user-detail',{
-        url:'/user/detail',
-        templateUrl:'views/user-detail.html',
-        controller:'UserDetailCtrl'
-      })
-      .state('user-withdraw',{
-        url:'/user/withdraw',
-        templateUrl:'views/user-withdraw.html',
-        controller:'UserWithdrawCtrl'
       })
   });

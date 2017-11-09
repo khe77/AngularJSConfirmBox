@@ -7,7 +7,7 @@
  * # LoginCtrl
  * Controller of the angularJsexamApp
  */
-angular.module('angularJsexamApp')
+angular.module('angularJsconfirmBoxApp')
   .controller('LoginCtrl', 
     ['$scope','$state','sessionInfo','sessionService', 
     function ($scope, $state, sessionInfo, sessionService) {
