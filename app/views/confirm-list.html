@@ -4,7 +4,11 @@
 <div class="row">
   <div class="col-sm-12">
     <table class="table">
+<<<<<<< HEAD
+      <thead><tr><th>id</th><th>name</th><th>age</th><th>edit</th><th>delete</th><th></th></tr></thead>
+=======
       <thead><tr><th>id</th><th>name</th><th>age</th><th>edit</th><th>delete</th></tr></thead>
+>>>>>>> 34c90006ca458e8842b1212094355b2cb68e87e5
       <tbody>
         <tr ng-repeat="obj in userList">
           <td><a href="detail:{{obj.id}}&{{obj.name}}&{{obj.age}}"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getUserInfo(obj.id)">{{obj.id}}</button></a></td>
@@ -12,6 +16,10 @@
           <td><input type="text" class="form-control" ng-model="obj.age"></td>
           <td><button type="button" class="btn btn-warning" ng-click="modifyUserInfo(obj.id,obj.name,obj.age)">Edit</button></td>
           <td><button type="button" class="btn btn-danger" ng-click="deleteUserInfo(obj.id)">Danger</button></td>
+<<<<<<< HEAD
+          <td><button type="button" class="btn" ng-click="goUserDetail(obj.id)">{{obj.id}}</button></button></td>
+=======
+>>>>>>> 34c90006ca458e8842b1212094355b2cb68e87e5
         </tr>
       </tbody>
     </table>

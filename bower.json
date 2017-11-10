@@ -9,7 +9,13 @@
     "angular-resource": "^1.4.0",
     "angular-route": "^1.4.0",
     "angular-sanitize": "^1.4.0",
+<<<<<<< HEAD
+    "angular-touch": "^1.4.0",
+    "angular-bootstrap": "^2.5.0",
+    "angular-ui-router": "^1.0.10"
+=======
     "angular-touch": "^1.4.0"
+>>>>>>> 34c90006ca458e8842b1212094355b2cb68e87e5
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

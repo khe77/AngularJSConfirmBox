@@ -2,6 +2,15 @@
 
 /**
  * @ngdoc function
+<<<<<<< HEAD
+ * @name angularJsconfirmBoxApp.controller:MainCtrl
+ * @description
+ * # MainCtrl
+ * Controller of the angularJsconfirmBoxApp
+ */
+angular.module('angularJsconfirmBoxApp')
+  .controller('MainCtrl', function () {
+=======
  * @name angularJsexamApp.controller:MainCtrl
  * @description
  * # MainCtrl
@@ -75,11 +84,15 @@ angular.module('angularJsconfirmBoxApp')
     }])
   .controller('MainCtrl', ["$scope", "$location",
    function ($scope, $location) {
+>>>>>>> 34c90006ca458e8842b1212094355b2cb68e87e5
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+<<<<<<< HEAD
+  });
+=======
 
     $scope.$on('$viewContentLoaded', function() {
       var os = $location.search().os;
@@ -89,3 +102,4 @@ angular.module('angularJsconfirmBoxApp')
     });
     
   }]);
+>>>>>>> 34c90006ca458e8842b1212094355b2cb68e87e5
