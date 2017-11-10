@@ -31,7 +31,7 @@ angular.module('angularJsconfirmBoxApp')
     }
     $scope.getUserId = function() {
       if (sessionInfo.isUserSignedIn())
-        return sessionInfo.getCurrentUser().data.user_id;
+        return sessionInfo.getCurrentUser().data.name;
       else return '';
     }
     $scope.logout = function() {

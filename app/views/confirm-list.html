@@ -4,7 +4,7 @@
 <div class="row">
   <div class="col-sm-12">
     <table class="table">
-      <thead><tr><th>en</th><th>task_id</th><th>cfm_seq</th><th>cfm_en</th><th>cfm_title</th><th>cfm_text</th><th>cfm_yn</th><th>cfm_opinion</th><th>edit</th><th>delete</th><th></th></tr></thead>
+      <thead><tr><th>결재자<br>사번</th><th>업무<br>코드</th><th>제목</th><th>결재Y/N</th><th>edit</th><th>delete</th><th></th></tr></thead>
       <tbody>
         <tr ng-repeat="obj in confirmList">
           <td><a href="detail:{{obj.id}}&{{obj.name}}&{{obj.age}}"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getUserInfo(obj.id)">{{obj.id}}</button></a></td>

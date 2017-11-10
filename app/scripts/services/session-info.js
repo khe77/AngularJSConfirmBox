@@ -22,10 +22,11 @@ angular.module('angularJsconfirmBoxApp')
     };
     this.isUserSignedIn = function() {
     	if (this.getCurrentUser()) {
-    		if (this.getCurrentUser().data != undefined) {
+            if (this.getCurrentUser().data != undefined) {
     			return true;
     		} else { return false; }
-    	} else { return false; }
+    	} else { 
+            return false; }
     };
     this.setUserInfo = function(info) {
     	angular.extend($rootScope.currentUser, info);

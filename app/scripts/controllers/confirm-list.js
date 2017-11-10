@@ -9,8 +9,8 @@
  */
 angular.module('angularJsconfirmBoxApp')
   .controller('ConfirmListCtrl', [
-    "Data", "$scope", "$state", 
-    function (Data, $scope, $state) {
+    "Data", "$scope", "$state",'sessionInfo','sessionService', 
+    function (Data, $scope, $state, sessionInfo, sessionService) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -18,20 +18,20 @@ angular.module('angularJsconfirmBoxApp')
     ];
     //페이지가 로딩되었을 때 호출
     $scope.$on('$viewContentLoaded', function() {
-        $scope.requestUserList();
+        $scope.requestConfirmList();
     });
-    $scope.userList = [];
-    $scope.requestUserList = function() {
+    $scope.confirmList = [];
+    $scope.requestConfirmList = function() {        
         var dataPromise = Data.getData(
-            'http://172.16.2.5:52273/user');
+            'http://172.16.2.5:3000/confirms','&en='+sessionInfo.getCurrentUser().data.en);
         dataPromise.then(function(results) {
-            $scope.userList = results.data;
+            $scope.confirmList = results.data;
         },function(reason){},function(update){});
     }
 
     $scope.deleteUserInfo = function(id) {
         var dataPromise = Data.deleteData(
-            'http://172.16.2.5:52273/user/'+id, '');
+            'http://172.16.2.5:3000/user/'+id, '');
         dataPromise.then(function(results) {
             $scope.requestUserList();
         },function(reason){},function(update){});
@@ -39,7 +39,7 @@ angular.module('angularJsconfirmBoxApp')
 
     $scope.modifyUserInfo = function(id, name, age) {
         var dataPromise = Data.modifyData(
-            'http://172.16.2.5:52273/user/'+id, 
+            'http://172.16.2.5:3000/user/'+id, 
             '&name='+name+'&age='+age);
         dataPromise.then(function(results) {
             $scope.requestUserList();
@@ -48,7 +48,7 @@ angular.module('angularJsconfirmBoxApp')
 
     $scope.requestUserInfo = function(id) {
         var dataPromise = Data.getData(
-            'http://172.16.2.5:52273/user/'+id);
+            'http://172.16.2.5:3000/user/'+id);
         dataPromise.then(function(results) {
             $scope.user_id = results.data.id;
             $scope.user_name = results.data.name;
@@ -59,7 +59,7 @@ angular.module('angularJsconfirmBoxApp')
     $scope.userInfo = {};
     $scope.getUserInfo = function(id) {
         var dataPromise = Data.getData(
-            'http://172.16.2.5:52273/user/'+id);
+            'http://172.16.2.5:3000/user/'+id);
         dataPromise.then(function(results) {
             $scope.userInfo = results.data;
         },function(reason){},function(update){});

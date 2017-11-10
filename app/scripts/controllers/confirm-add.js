@@ -8,7 +8,7 @@
  * Controller of the angularJsexamApp
  */
 angular.module('angularJsconfirmBoxApp')
-  .controller('LoginCtrl', 
+  .controller('ConfirmAddCtrl', 
     ['$scope','$state','sessionInfo','sessionService', 
     function ($scope, $state, sessionInfo, sessionService) {
     this.awesomeThings = [
