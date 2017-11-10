@@ -2,7 +2,6 @@
 
 /**
  * @ngdoc function
-<<<<<<< HEAD
  * @name angularJsconfirmBoxApp.controller:ConfirmListCtrl
  * @description
  * # ConfirmListCtrl

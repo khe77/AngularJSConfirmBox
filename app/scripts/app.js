@@ -33,8 +33,8 @@ angular
         controller:'LoginCtrl'
       })
       .state('confirm-list',{
-        url:'/user/list',
-        templateUrl:'views/user-list.html',
-        controller:'UserListCtrl'
+        url:'/confirm/list',
+        templateUrl:'views/confirm-list.html',
+        controller:'ConfirmListCtrl'
       })
   });
