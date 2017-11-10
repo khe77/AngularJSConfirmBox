@@ -34,12 +34,7 @@ angular
       })
       .state('confirm-list',{
         url:'/user/list',
-<<<<<<< HEAD
-        templateUrl:'views/confirm-list.html',
-        controller:'ConfirmListCtrl'
-=======
         templateUrl:'views/user-list.html',
         controller:'UserListCtrl'
->>>>>>> 34c90006ca458e8842b1212094355b2cb68e87e5
       })
   });
