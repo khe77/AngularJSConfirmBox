@@ -17,13 +17,13 @@ angular.module('angularJsconfirmBoxApp')
       'Karma'
     ];
     if (sessionInfo.isUserSignedIn()) {
-      $state.go('confirm-list');
+      $state.go('main');
     } else {
       $state.go('login');
     }
     $scope.submitLogin = function() {
       sessionService.login($scope.login, function(res) {
-        $state.go('confirm-list');
+        $state.go('main');
       });
     }
     $scope.isUserSignedIn = function() {

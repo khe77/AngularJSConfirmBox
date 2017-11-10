@@ -22,11 +22,6 @@ angular
   .config(function ($stateProvider, $urlRouterProvider, $routeProvider) {
     $urlRouterProvider.otherwise("/");
     $stateProvider
-      .state('main', {
-        url:'/',
-        templateUrl:'views/main.html',
-        controller:'MainCtrl'
-      })
       .state('login', {
         url:'/login',
         templateUrl:'views/login.html',
@@ -36,5 +31,10 @@ angular
         url:'/confirm/list',
         templateUrl:'views/confirm-list.html',
         controller:'ConfirmListCtrl'
+      })
+      .state('confirm-add',{
+        url:'/confirm/add',
+        templateUrl:'views/confirm-add.html',
+        controller:'ConfirmAddCtrl'
       })
   });
