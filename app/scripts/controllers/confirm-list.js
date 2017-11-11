@@ -23,50 +23,31 @@ angular.module('angularJsconfirmBoxApp')
     $scope.confirmList = [];
     $scope.requestConfirmList = function() {        
         var dataPromise = Data.getData(
-            'http://172.16.2.5:3000/confirms','&en='+sessionInfo.getCurrentUser().data.en);
+            'http://172.16.2.5:3000/confirms/'+sessionInfo.getCurrentUser().data.en, '');
         dataPromise.then(function(results) {
             $scope.confirmList = results.data;
         },function(reason){},function(update){});
     }
 
-    $scope.deleteUserInfo = function(id) {
+    $scope.deleteConfirm = function(en, task_id, cfm_seq, cfm_yn) {
+        if(cfm_yn != null){
+            window.alert('결재가 되어 삭제하실 수 없습니다.');
+            return;
+        }
         var dataPromise = Data.deleteData(
-            'http://172.16.2.5:3000/user/'+id, '');
+            'http://172.16.2.5:3000/confirm', '&en='+en+'&task_id='+task_id+'&cfm_seq='+cfm_seq);
         dataPromise.then(function(results) {
-            $scope.requestUserList();
+            $scope.requestConfirmList();
         },function(reason){},function(update){});
     }
 
-    $scope.modifyUserInfo = function(id, name, age) {
-        var dataPromise = Data.modifyData(
-            'http://172.16.2.5:3000/user/'+id, 
-            '&name='+name+'&age='+age);
-        dataPromise.then(function(results) {
-            $scope.requestUserList();
-        },function(reason){},function(update){});
-    }
-
-    $scope.requestUserInfo = function(id) {
+    $scope.confirmDetail = {};
+    $scope.getConfirm = function(en, task_id, cfm_seq) {
         var dataPromise = Data.getData(
-            'http://172.16.2.5:3000/user/'+id);
+            'http://172.16.2.5:3000/confirm/'+en+'?task_id='+task_id+'&cfm_seq='+cfm_seq);
         dataPromise.then(function(results) {
-            $scope.user_id = results.data.id;
-            $scope.user_name = results.data.name;
-            $scope.user_age = results.data.age;
+            $scope.confirmDetail = results.data;
         },function(reason){},function(update){});
-    }
-
-    $scope.userInfo = {};
-    $scope.getUserInfo = function(id) {
-        var dataPromise = Data.getData(
-            'http://172.16.2.5:3000/user/'+id);
-        dataPromise.then(function(results) {
-            $scope.userInfo = results.data;
-        },function(reason){},function(update){});
-    }
-
-    $scope.goUserDetail = function(id) {
-        $state.go('user-detail', {id:id});
     }
 
   }]);
